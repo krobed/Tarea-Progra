@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1Bie8_wNdNk8pc19Wo5aUTA9fUkkg-aHq
 """
 
-#Aaa
+# libraries
 import numpy as np
 from datetime import datetime
 
@@ -44,7 +44,27 @@ def print_date():
     current_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     print(f'Current date and time: {current_date}')
 
+def is_leap_year() -> bool:
+    """Function to calculate if it is a leap year."""
+
+    year = int(input("Enter a year to find out if it's a leap year.\n"))
+    if year%400 == 0: # Multiples of 400 are leap years.
+        leap_year = True
+    elif year%100 == 0: # The rest of the multiples of 100 are not leap years.
+        leap_year = False
+    elif year%4 == 0: # The rest of the multiples of 4 are leap years.
+        leap_year = True
+    else: # The rest of the years are not leap years.
+        leap_year = False
+
+    if leap_year:
+        print(str(year), "is a leap year.")
+    else:
+        print(str(year), "is not a leap year.")
+
+
 # Example usage
 hiworld()
 print_date()
+is_leap_year()
 rps()

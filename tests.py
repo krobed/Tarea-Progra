@@ -1,3 +1,4 @@
+from App import rps, print_date, is_leap_year, hiworld
 #Tests
 def test_rps():
   assert rps('rock') == "Invalid input. Please enter 'r' for rock, 'p' for paper, or 's' for scissors."

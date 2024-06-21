@@ -7,7 +7,7 @@ def test_print_date():
   assert type(print_date()) == str
 
 def test_is_leap_year():
-  assert is_leap_year(2024)== 'is a leap year.'
+  assert is_leap_year(2024)== '2024 is a leap year.'
 
 
 def test_hiworld():

@@ -16,7 +16,7 @@ from datetime import datetime
 def hiworld() -> None:
     ''' Imprime el string 'hello world'
     '''
-    print('Hello World')
+    return 'Hello World'
 
 # Rock paper scissors function
 def rps(rps:string) -> None:
@@ -25,8 +25,8 @@ def rps(rps:string) -> None:
     '''
     
     if play not in ['r', 'p', 's']:
-        print("Invalid input. Please enter 'r' for rock, 'p' for paper, or 's' for scissors.")
-        break
+        return "Invalid input. Please enter 'r' for rock, 'p' for paper, or 's' for scissors."
+        
 
     r = np.random.randint(0, 3)
     d = ['rock', 'paper', 'scissors']
@@ -45,7 +45,7 @@ def print_date() -> None:
     ''' Función que imprime la fecha y hora del momento.
     '''
     current_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    print(f'Current date and time: {current_date}')
+     return f'Current date and time: {current_date}'
 
 def is_leap_year(year: int) -> bool:
     """Function to calculate if it is a leap year."""
@@ -63,9 +63,9 @@ def is_leap_year(year: int) -> bool:
     else:
         print(str(year), "is not a leap year.")
 
-assert 
+assert is_leap_year(2024)== 'is a leap year.'
+assert hiworld() == 'Hello World'
+assert rps('rock') == "Invalid input. Please enter 'r' for rock, 'p' for paper, or 's' for scissors."
+assert type(print_date()) == str
 # Example usage
-hiworld()
-print_date()
-is_leap_year()
-rps()
+

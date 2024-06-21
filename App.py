@@ -19,31 +19,26 @@ def hiworld() -> None:
     print('Hello World')
 
 # Rock paper scissors function
-def rps() -> None:
-    ''' Función interactiva que permite jugar piedra papel o tijera con la maquina,
-        continua eternamente hasta que el usuario indica 'n' luego de que la consola
-        pregunta 'Play again? (y/n): '.
+def rps(rps:string) -> None:
+    ''' Función interactiva que permite jugar piedra papel o tijera con la maquina, recibe
+        un string que debe ser 'r', 'p' o 's', si es ninguno, la iteración termina.
     '''
-    while True:
-        play = input('Choose between rock, paper or scissors (r, p, or s): ').lower()
-        if play not in ['r', 'p', 's']:
-            print("Invalid input. Please enter 'r' for rock, 'p' for paper, or 's' for scissors.")
-            continue
+    
+    if play not in ['r', 'p', 's']:
+        print("Invalid input. Please enter 'r' for rock, 'p' for paper, or 's' for scissors.")
+        break
 
-        r = np.random.randint(0, 3)
-        d = ['rock', 'paper', 'scissors']
-        out = d[r]
+    r = np.random.randint(0, 3)
+    d = ['rock', 'paper', 'scissors']
+    out = d[r]
 
-        if out[0] == play:
-            print(f'{out}, it\'s a draw!')
-        elif (out == 'rock' and play == 's') or (out == 'scissors' and play == 'p') or (out == 'paper' and play == 'r'):
-            print(f'{out}, you lose!')
-        else:
-            print(f'{out}, you win!')
+    if out[0] == play:
+        return (f'{out}, it\'s a draw!')
+    elif (out == 'rock' and play == 's') or (out == 'scissors' and play == 'p') or (out == 'paper' and play == 'r'):
+        return (f'{out}, you lose!')
+    else:
+        return (f'{out}, you win!')
 
-        again = input('Play again? (y/n): ').lower()
-        if again != 'y':
-            break
 
 # Function to print the current date
 def print_date() -> None:
@@ -52,10 +47,8 @@ def print_date() -> None:
     current_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     print(f'Current date and time: {current_date}')
 
-def is_leap_year() -> bool:
+def is_leap_year(year: int) -> bool:
     """Function to calculate if it is a leap year."""
-
-    year = int(input("Enter a year to find out if it's a leap year.\n"))
     if year%400 == 0: # Multiples of 400 are leap years.
         leap_year = True
     elif year%100 == 0: # The rest of the multiples of 100 are not leap years.
@@ -70,7 +63,7 @@ def is_leap_year() -> bool:
     else:
         print(str(year), "is not a leap year.")
 
-
+assert 
 # Example usage
 hiworld()
 print_date()

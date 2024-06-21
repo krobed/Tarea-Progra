@@ -56,9 +56,9 @@ def is_leap_year(year: int) -> bool:
         leap_year = False
 
     if leap_year:
-        print(str(year), "is a leap year.")
+        return str(year)+ " is a leap year."
     else:
-        print(str(year), "is not a leap year.")
+        return str(year) + " is not a leap year."
 
 
 

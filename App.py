@@ -13,11 +13,17 @@ from datetime import datetime
 
 
 # Hello world function
-def hiworld():
+def hiworld() -> None:
+    ''' Imprime el string 'hello world'
+    '''
     print('Hello World')
 
 # Rock paper scissors function
-def rps():
+def rps() -> None:
+    ''' Función interactiva que permite jugar piedra papel o tijera con la maquina,
+        continua eternamente hasta que el usuario indica 'n' luego de que la consola
+        pregunta 'Play again? (y/n): '.
+    '''
     while True:
         play = input('Choose between rock, paper or scissors (r, p, or s): ').lower()
         if play not in ['r', 'p', 's']:
@@ -40,7 +46,9 @@ def rps():
             break
 
 # Function to print the current date
-def print_date():
+def print_date() -> None:
+    ''' Función que imprime la fecha y hora del momento.
+    '''
     current_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     print(f'Current date and time: {current_date}')
 

@@ -19,15 +19,12 @@ def hiworld() -> None:
     return 'Hello World'
 
 # Rock paper scissors function
-def rps(rps:string) -> None:
+def rps(play:str) -> None:
     ''' Función interactiva que permite jugar piedra papel o tijera con la maquina, recibe
         un string que debe ser 'r', 'p' o 's', si es ninguno, la iteración termina.
     '''
-    
     if play not in ['r', 'p', 's']:
         return "Invalid input. Please enter 'r' for rock, 'p' for paper, or 's' for scissors."
-        
-
     r = np.random.randint(0, 3)
     d = ['rock', 'paper', 'scissors']
     out = d[r]

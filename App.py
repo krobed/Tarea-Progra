@@ -45,7 +45,7 @@ def print_date() -> None:
     ''' Función que imprime la fecha y hora del momento.
     '''
     current_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-     return f'Current date and time: {current_date}'
+    return f'Current date and time: {current_date}'
 
 def is_leap_year(year: int) -> bool:
     """Function to calculate if it is a leap year."""

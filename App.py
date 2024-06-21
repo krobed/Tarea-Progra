@@ -7,17 +7,23 @@ Original file is located at
     https://colab.research.google.com/drive/1Bie8_wNdNk8pc19Wo5aUTA9fUkkg-aHq
 """
 
-#Aaa
+# libraries
 import numpy as np
 from datetime import datetime
 
 
 # Hello world function
-def hiworld():
+def hiworld() -> None:
+    ''' Imprime el string 'hello world'
+    '''
     print('Hello World')
 
 # Rock paper scissors function
-def rps():
+def rps() -> None:
+    ''' Función interactiva que permite jugar piedra papel o tijera con la maquina,
+        continua eternamente hasta que el usuario indica 'n' luego de que la consola
+        pregunta 'Play again? (y/n): '.
+    '''
     while True:
         play = input('Choose between rock, paper or scissors (r, p, or s): ').lower()
         if play not in ['r', 'p', 's']:
@@ -40,11 +46,33 @@ def rps():
             break
 
 # Function to print the current date
-def print_date():
+def print_date() -> None:
+    ''' Función que imprime la fecha y hora del momento.
+    '''
     current_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     print(f'Current date and time: {current_date}')
+
+def is_leap_year() -> bool:
+    """Function to calculate if it is a leap year."""
+
+    year = int(input("Enter a year to find out if it's a leap year.\n"))
+    if year%400 == 0: # Multiples of 400 are leap years.
+        leap_year = True
+    elif year%100 == 0: # The rest of the multiples of 100 are not leap years.
+        leap_year = False
+    elif year%4 == 0: # The rest of the multiples of 4 are leap years.
+        leap_year = True
+    else: # The rest of the years are not leap years.
+        leap_year = False
+
+    if leap_year:
+        print(str(year), "is a leap year.")
+    else:
+        print(str(year), "is not a leap year.")
+
 
 # Example usage
 hiworld()
 print_date()
+is_leap_year()
 rps()
